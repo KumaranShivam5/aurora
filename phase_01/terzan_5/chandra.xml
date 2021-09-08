@@ -5,7 +5,7 @@
  xmlns:stc="http://www.ivoa.net/xml/STC/v1.30">
 <!--
  !  VOTable written by STIL version 3.0-3 (edu.harvard.cfa.scs.servlet.SCSVOTableWriter)
- !  at 2021-06-29T20:57:15
+ !  at 2021-09-08T07:49:19
  !-->
 <DESCRIPTION>
 Chandra Source Catalog version 2 Simple Cone Search
@@ -16,7 +16,7 @@ Chandra Source Catalog version 2 Simple Cone Search
 <PARAM datatype="char" name="CoordProjection" ucd="VOX:WCS_CoordProjection" value="TAN" arraysize="*" />
 <PARAM datatype="char" name="Bandpass" ucd="VOX:BandPass_ID" value="X-ray" arraysize="*" />
 <PARAM datatype="char" name="BandpassUnit" ucd="VOX:BandPass_Unit" value="keV" arraysize="*" />
-<TABLE name="RA:267.02,DEC:-24.7791666,SR:0.033333,VERB:2,TIME:2021/06/29_16:57:15">
+<TABLE name="RA:267.02,DEC:-24.7791666,SR:0.033333,VERB:2,TIME:2021/09/08_03:49:19">
 <DESCRIPTION>
 Chandra Source Catalog version 2 Simple Cone Search
 </DESCRIPTION>
