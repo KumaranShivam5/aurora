@@ -1,4 +1,4 @@
-# SHINAGAMI
+# Project Aurora
 ### _X-ray sources classification using Machine Learning_
 ## Phase 01 
 ---
