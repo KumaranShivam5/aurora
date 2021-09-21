@@ -1,3 +1,7 @@
+## Recap 
+
+Per observation study
+<br><br>
 # Globular Cluster Sources 
 
 This exercise is to identify the flux distribution of X-ray sources in Globular clusters. We will use this flux distribution for setting up a threshold for identifying the quiscent observations for our training sample.
@@ -55,7 +59,6 @@ cite- Harris 1996 (2010 edition)
 
 > RA, DEC for sources belonging to all the clusters retrived from <b>Chandra Source Catalogue CSC2.0</b>  from <b>Per Observation Table</b>
 
-> Total Number of Observations retrived - 
 
 > Only considered sources which are having unique representation in master catalogue table , which means that the observation is identified to belong to a unique source in CSC2.0 
 
@@ -63,7 +66,7 @@ cite- Harris 1996 (2010 edition)
 
 > Total number of such observations - 2520
 
-> FLux with different bands **h/m/s/u** were added as not all the sources have observations inn all the bands 
+> FLux with different bands **h/m/s/u** were added as not all the sources have observations in all the bands 
 
 ### FLux Distribution 
 --- 
@@ -105,6 +108,31 @@ max	|   116.8620 |	5.660075e-10 |	3.809948e-10 |	7.408198e-10
 |NGC-6362.csv |	2CXO J172951.1-665756 |	2.768267e-10|
 
 --- 
+<br>
+
+# Deciding Flux threshold 
+
+Generally 
+LMXRB in quiscent state - $L_X\approx 10^{32}erg/s$
+
+LMXRB undergoing bursts have x-ray luminosities $L_X\approx 10^{36} - 10^{38} erg/s$
+
+|Dist \ $L_x$|$10^{36}$|$10^{38}$|
+|-------|-------|-------|
+| 1kPc | $8.4\times10^{-9}$ |$8.4\times10^{-7}$ |
+| 8kPc | $1.3\times10^{-10}$ | $8.4\times10^{-8}$ | 
+| 15kPc | $3.7\times10^{-11}$ | $3.7\times10^{-9}$ |  
+
+> 15 kpc - radius of Galactic halo
+
+> 8kpc - center of our galaxy 
+
+> 1kpc distance to nearest GC, M4
+
+<small>
+Tucker, M. A., et al. "ASASSN-18ey: the rise of a new black hole X-ray binary." The Astrophysical Journal Letters 867.1 (2018): L9.
+</small>
+
 
 ### Hardness Distribution 
 ---
@@ -147,3 +175,7 @@ hardness calculation here
 |89_NGC-6397.csv   | 2CXO J174058.2-534618|208.1666|
 |89_NGC-6397.csv   | 2CXO J174105.2-533759|50.97297|
 |93_Terzan-5.csv   | 2CXO J174716.3-244756|72.38392|
+
+
+<br><br><br>
+
