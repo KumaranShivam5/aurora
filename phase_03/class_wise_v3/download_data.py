@@ -9,8 +9,9 @@ from fields import fields
 def hr():
     print('-------------------------------------------------------')
 
-#hdu1 = fits.open('../data/binaries/LMXB_NS.fits')[1].data
-hdu1 = fits.open('../data/CVs/CV_mid_set.fits')[1].data
+hdu1 = fits.open('../data/binaries/LMXB_NS.fits')[1].data
+#hdu1 = fits.open('../data/binaries/LMXRB_BH.fits')[1].data
+#hdu1 = fits.open('../data/CVs/CV_mid_set.fits')[1].data
 ra = hdu1['B_RA']
 dec = hdu1['B_DEC']
 
@@ -21,7 +22,7 @@ def download_data(data_fits , root):
         dec =  di['B_DEC']
         name  =  di['A_NAME'].replace(' ' ,'_')
         ch_name = di['B_NAME'].replace(' ' ,'_')
-        name = name+'-X-'+ch_name+'.csv'
+        name = ch_name+'.csv'
         hr()
         print('source Number :  ' , count )
         print(ra,dec)
@@ -57,7 +58,7 @@ def download_data(data_fits , root):
         hr()
         count+=1
 
-download_data(hdu1 , 'CV_data/')
+download_data(hdu1 , 'NS_data_all/')
 
 def download_data_pulsar(RA,DEC,NAME,root):
     count = 0 

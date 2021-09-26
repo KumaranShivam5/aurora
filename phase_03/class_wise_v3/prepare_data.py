@@ -8,7 +8,7 @@ import os
 from ipywidgets import IntProgress
 from IPython.display import display
 
-CLASS = 'CV'
+CLASS = 'NS'
 
 def hr():
     print('_______________________________________________________________________________________')
@@ -53,11 +53,21 @@ data = pd.DataFrame()
 
 for file in file_list:
     data_temp =  pd.read_csv(CLASS+'_data/'+file)
+    ## extracting source_id from file names 
+    src_id_name = file[:6]
+    src_id = [src_id_name]*len(data_temp)
+    src_id = np.asarray(src_id)
+    data_temp.insert(0 ,'src_id' , src_id)
+    src_n_name = file[7:-4].replace('_' , ' ')
+    src_n = [src_n_name]*len(data_temp)
+    src_n = np.asarray(src_n)
+    data_temp.insert(0 ,'src_n' , src_n)
     data =  data.append(data_temp)
 
 
 data.describe()
-
+hr()
+print(data['src_id'])
 
 
 
@@ -162,13 +172,15 @@ data_combine.describe()
 data_combine=  data_combine.dropna(axis=1 , how='all')
 data_combine.describe()
 
+data_combine.insert(0,'src_name' , data['src_n'])
+data_combine.insert(0,'src_id' , data['src_id'])
 
 
-
-
-
+hr()
+print('ALL DATA COMBINED')
+hr()
 display(data_combine)
-
+hr()
 
 
 
@@ -177,12 +189,15 @@ data_final = data_combine[data_combine['pileup_flag']==False]
 data_final =  data_final[data_final['mstr_sat_src_flag']==False]
 data_final =  data_final[data_final['mstr_streak_src_flag']==False]
 data_final.insert(0 , 'class' ,len(data_final)*[CLASS])
+
+#data_final.insert(0 , 'src_id' , data['src_id'])
 print(data_final)
 
 data_final.index.name = 'index'
 data_final = data_final.drop(columns=['mstr_sat_src_flag' , 'mstr_streak_src_flag' , 'pileup_flag'])
 data_final.index.name = 'index'
 print(data_final.describe())
+
 data_final.to_csv('processed_data/'+CLASS+'.csv')
 
 
