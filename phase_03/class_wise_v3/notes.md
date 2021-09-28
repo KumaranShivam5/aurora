@@ -37,3 +37,12 @@ TO-DO
 > Catalogue of Neutron STAR
 > Probe Network 
 > Distance to globular cluster
+
+
+## Problem in current training scheme 
+
+We have increased our dataset by considering each observations as seperate source.
+We are taking all the "observations" and reshuffling them and then splitting them into training and test data
+But it is very likely that some observations from test sources went into training set.
+
+Likely solution - make train-test split before reshuffling 

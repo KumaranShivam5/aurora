@@ -58,7 +58,7 @@ for file in file_list:
     src_id = [src_id_name]*len(data_temp)
     src_id = np.asarray(src_id)
     data_temp.insert(0 ,'src_id' , src_id)
-    src_n_name = file[7:-4].replace('_' , ' ')
+    src_n_name = file[29:-4].replace('_' , ' ')
     src_n = [src_n_name]*len(data_temp)
     src_n = np.asarray(src_n)
     data_temp.insert(0 ,'src_n' , src_n)
