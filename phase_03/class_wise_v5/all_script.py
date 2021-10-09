@@ -143,7 +143,7 @@ def run_script(set_type):
 
     # next we will combine all bands data. SOme parameters like pfotometry , variability are in different bands  , we will combine them as mean to reomve sparsity in data
 
-    band_params = [ 'flux_significance' , 'photflux_aper' ,'photflux_aper_lolim' , 'photflux_aper_hilim' , 'flux_aper' , 'flux_aper_lolim' , 'flux_aper_hilim' , 'var_index' ,'var_prob' , 'ks_prob' , 'kp_prob' ,'var_sigma' ,'var_mean' , 'var_min' ,  'var_max' , 'var_inter_index' , 'var_inter_prob' , 'var_inter_sigma']
+    band_params = [ 'photflux_aper' ,'photflux_aper_lolim' , 'photflux_aper_hilim' , 'flux_aper' , 'flux_aper_lolim' , 'flux_aper_hilim' , 'var_index' ,'var_prob' , 'ks_prob' , 'kp_prob' ,'var_sigma' ,'var_mean' , 'var_min' ,  'var_max' , 'var_inter_index' , 'var_inter_prob' , 'var_inter_sigma']
 
 
 
@@ -211,28 +211,15 @@ def run_script(set_type):
 
 
     data_single.describe()
-
-
-
     data_info = data[obs_info_params]
-
-
-
     data_combine = pd.concat([data_info , data_band_mean , data_single] , axis=1)
-
-
-
     data_combine.describe()
-
 
     # ## Flux Scaling 
     # We need to take log values of all flux columns 
     # (not sure about error propogation in hilim and lolim)
 
-
     flux_rows = ['flux_aper' , 'flux_aper_lolim' , 'flux_aper_hilim' ,'flux_powlaw'  , 'flux_bb'  , 'flux_brems' ,  'flux_apec' , 'flux_bb_hilim' , 'flux_bb_lolim',  'flux_powlaw_hilim' ,'flux_powlaw_lolim', 'flux_brems_lolim' , 'flux_brems_hilim' , 'flux_apec_hilim' , 'flux_apec_lolim' ]
-
-
 
     for f in flux_rows:
         try:
